@@ -25,7 +25,7 @@ class HelloView(APIView):
             user = request.data.get('event').get('user')
             text = request.data.get('event').get('text')
             print("사용자 :", user, "| 메시지 :", text)
-            self.post_message("xoxb-2470194170337-2493625179457-X4JemkrFwA4rGQkTRN638CLa", "#민우", "싫엉")
+            self.post_message("", "#민우", "싫엉")
 
 
         # 응답 데이터로 { challenge : challenge } 주기
