@@ -4,6 +4,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
+from django.conf import settings
 # Create your views here.
 
 class HelloView(APIView):
@@ -25,7 +26,7 @@ class HelloView(APIView):
             user = request.data.get('event').get('user')
             text = request.data.get('event').get('text')
             print("사용자 :", user, "| 메시지 :", text)
-            self.post_message("", "#민우", "싫엉")
+            self.post_message(settings.SLACKBOT_TOKEN, "#민우", "안녕하세요 봇이에요.")
 
 
         # 응답 데이터로 { challenge : challenge } 주기
